@@ -1,0 +1,102 @@
+<ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-clip-rotate-pulse">
+   <p style="font-size: 20px; color: rgb(231, 181, 41)">Loading...</p>
+</ngx-spinner>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid bgReview">
+            
+          <div class="navbar-header">          
+              <img class="imgreview img-fluid" src="../assets/vrrag.png">
+            <!-- <a class="navbar-brand" style="font-family:'Comic Sans MS'; color: #ffffff;">Review Master</a> -->
+          </div>
+         
+          <ul class="nav navbar-nav">
+            <li class="active fonts"><a href="#" style="color: #ffffff;">Home</a></li>
+            <li><a href="#" style="color: #ffffff;">Answer</a></li>
+            <li><a href="#" style="color: #ffffff;">Poll</a></li>
+          </ul>
+          <span *ngIf="!IsUserExists">
+            <button class="btn btn-success navbar-btn navbar-nav signup" (click)="openSignUp()" ><i class="fa fa-user-times" style="padding-right: 5px;" aria-hidden="true"></i>Sign up free</button>
+            <button class="btn btn-default navbar-btn navbar-nav signup" style="background-color: #474e5d; color:white; border: none;" 
+            (click)="openSignIn()"><i class="fa fa-user-circle-o" style="padding-right: 5px;" aria-hidden="true"></i>Log in</button>
+            
+          </span> 
+          <span *ngIf="IsUserExists">            
+            <button class="btn btn-danger logoutbtn" type="submit" (click)="onLogoutClick()">Logout</button>
+            <label class="userName">{{UserName | uppercase}}</label>
+          </span>        
+        </div>
+      </nav>
+      <br>
+      
+      <div class="container-fluid text-center"> 
+          <div class="row content">
+    <div class="col-sm-2 col-md-2 sidenav" style="margin-top:50px; text-align:left">      
+        <div class="well vertical-menu">
+            <a (click)="menuClick('Science')" class="menu"><i class="fa fa-flask" aria-hidden="true"></i>  Science</a>
+            <a (click)="menuClick('Media')" class="menu"><i class="fa fa-film" aria-hidden="true"></i>  Media</a>
+            <a (click)="menuClick('Sports')" class="menu"><i class="fa fa-trophy" aria-hidden="true"></i>  Sports</a>
+            <a (click)="menuClick('Others')" class="menu"><i class="fa fa-arrow-right" aria-hidden="true"></i>  Others</a>
+        </div>
+      
+    </div>
+    
+    <div class='col-sm-9 col-md-9' style="margin-top:50px">
+        <div class="well well-lg panel-body">
+      <form [formGroup] = "askQuesForm" (ngSubmit)="onSubmit()">
+        <div class="container-fluid">
+          <div class="row">
+        <div class="col-sm-10 col-md-10">
+          <mat-form-field class="example-full-width">
+            <textarea formControlName="quesText" style="resize: none" maxlength="150" rows="4" cols="150" matInput placeholder="Ask a question"></textarea>
+            <mat-hint align="start"><strong>Make your question simple and crisp</strong> </mat-hint>
+            <mat-error *ngIf="askQuesForm.get('quesText').touched">
+              Ask something <strong>here</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>    
+        <div class="col-sm-2 col-md-2">
+          <button class="btn btn-primary" style="float: left;" type="submit"[disabled]="!askQuesForm.valid" >Ask</button>
+          <!-- <button class="btn btn-default" style="margin-top: 1em;" type="reset" (clcik)="onClear">Clear</button> -->
+          <div>
+          <mat-form-field style="width: 9em; margin: 8px 0px;">
+              <mat-label>Category</mat-label>
+              <mat-select formControlName="categoryDropdown" >
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let c of category" [value]="c">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="askQuesForm.get('categoryDropdown').touched">Please choose a Category</mat-error>              
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      </div>
+      </form>
+    </div> 
+
+    <div class='well well-lg panel-body'>
+        <router-outlet ></router-outlet>
+      </div>
+
+    </div>
+    <div class="col-sm-1 col-md-1 sidenav" style="margin-top:50px">      
+      <div class="well well-lg" style="height: 90em;">
+        Poll Section
+      </div>
+     
+   </div>
+    
+    
+    
+    
+    
+  </div>
+  <footer class="container-fluid text-center">
+      <p>Copyright 2018-2019 by XXXXXXX. All Rights Reserved.</p>
+    </footer>
+  </div>

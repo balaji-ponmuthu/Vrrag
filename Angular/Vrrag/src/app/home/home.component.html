@@ -1,0 +1,27 @@
+
+
+<div >
+  <ul style="text-align: left; padding: 0px">
+    <li style="list-style-type: none">
+      <div *ngFor="let q of data" class="row well" style="background-color:honeydew">
+        <div class="col-sm-11">
+          <span ><a style="cursor: pointer" (click)="onQuesClick(q)">{{q.ques}}</a></span>
+      </div>
+      <div class="col-sm-1">
+          <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../../assets/user.png" alt="User" style="widows: 50px;;height:50px;">
+                 </div>
+                <div class="flip-card-back">
+                  <p>{{q.name | uppercase}}</p>
+                  <p>{{q.createdTime | date:'d/M/y'}}</p>
+                </div>
+              </div>
+            </div>
+      </div>
+      </div>
+    </li>
+    
+  </ul>
+</div>

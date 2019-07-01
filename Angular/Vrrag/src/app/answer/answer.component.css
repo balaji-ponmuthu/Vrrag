@@ -1,0 +1,16 @@
+.ansBorder{
+    border: 1px solid;
+    border-radius: 15px 50px;
+    text-align: left;
+    height: 100%;
+    min-height: 118px;
+    box-shadow: 10px 10px 5px grey;
+    margin-right: 30px;
+    float: right;
+}
+
+.userBorder{
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px grey;
+}

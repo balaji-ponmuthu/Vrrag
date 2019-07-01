@@ -1,0 +1,45 @@
+<div>
+  <span>
+    <h2 mat-dialog-title style="display:inline">SIGN UP</h2>
+</span>
+<i class="fa fa-times-circle fa-lg" style="margin-left: 7em; cursor: pointer;" aria-hidden="true" (click)="onClose()"></i>
+
+
+
+<form [formGroup] = "signUpform" (ngSubmit)="onSubmit()">
+  
+  <div class="form-group">
+    <!-- <label>User Name</label>
+    <input class="form-control" type="text" id="username" name="usrname" formControlName = "username" >
+    <span *ngIf="signUpform.get('username').touched && !signUpform.get('username').valid">Please enter valid Username!</span> -->
+    <mat-form-field appearance="outline">
+      <mat-label>User Name</mat-label>
+      <input matInput type="text" id="username" name="usrname" formControlName = "username" placeholder="Name" >      
+      <!-- <mat-hint><span *ngIf="signUpform.get('username').touched && !signUpform.get('username').valid">Please enter valid Username!</span></mat-hint> -->
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <!-- <label>Email</label>
+    <input class="form-control" type="text" id="email" name="email" formControlName = "email" >
+    <span *ngIf="signUpform.get('email').touched && !signUpform.get('email').valid">Please enter valid email!</span> -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" id="email" name="email" formControlName = "email" placeholder="Email" >      
+      <mat-hint><span *ngIf="signUpform.get('email').touched && !signUpform.get('email').valid">Please enter valid email!</span></mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <!-- <label>Password</label>
+    <input class="form-control" type="password" id="pswd" name="pswd" formControlName = "password" >
+    <span *ngIf="signUpform.get('password').touched && !signUpform.get('password').valid">Password required!</span> -->
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" id="pswd" name="pswd" formControlName = "password" placeholder="Password" >      
+      <mat-hint><span *ngIf="signUpform.get('password').touched && !signUpform.get('password').valid">Password required!</span></mat-hint>
+    </mat-form-field>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="(!signUpform.valid)">Sign Up</button>
+  <!-- <span *ngIf="signUpform.touched && !signUpform.valid">Enter valid data!</span> -->
+</form>
+
+</div>

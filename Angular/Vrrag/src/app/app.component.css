@@ -1,0 +1,107 @@
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    .body-content {
+      padding-top: 50px;
+    }
+  }
+  
+  .font{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  
+  .signup{
+    float: right!important;
+    border-radius: 27px;
+  }
+  
+  .bgReview{
+    background-color: #474e5d; /* Dark Blue */
+      
+  }
+
+  .userName{
+    float: right!important;
+    color: floralwhite;
+    margin: 1em;
+  }
+  .logoutbtn{
+    float: right;
+    margin-top: 0.4em;
+  }
+  
+  
+  .bgReview ul li a:hover{
+    background-color: rgb(240, 224, 137)!important;
+    color: rgb(80, 60, 44)!important;
+  }
+  
+  
+  
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+  }
+  
+  .vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .imgreview{
+    width: 100%;
+    max-width: 204px;
+    height: auto;
+  }
+
+ 
+
+.example-full-width {
+  width: 100%;
+}
+  
+
+  /* floating widget */
+  .me{
+      background:url("../assets/favicon.png")no-repeat center / contain;
+      width:40px;
+      height:40px;
+      bottom:16px;
+      right:16px;
+      position:fixed;
+      border-radius:50%;
+      z-index:999;
+      animation:me 2s linear infinite alternate
+      }
+  
+  @keyframes me{
+      from{transform:translateY(-4px)}
+      to{transform:translateY(4px)}
+      }
+  
+  .me:hover span
+      {right:50px;opacity:1;visibility:visible}
+  
+  .me span{
+      width:67px;
+      top:10px;
+      right:0;
+      display:block;
+      position:absolute;
+      color:#008080;
+      font-size:16px;
+      z-index:-1;
+      opacity:0;
+      visibility:hidden;
+      transition:all .5s ease
+      }
+
+  .menu{
+      cursor: pointer;
+      }

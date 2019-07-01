@@ -1,0 +1,50 @@
+<div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p>{{quesUserName | uppercase}}</p>
+      <div class="panel panel-default text-left">
+        <div class="panel-body">
+          <p>{{ques}}</p>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    
+    <div class="col-sm-12 panel-body" style="background-color: lightyellow;">
+      <form [formGroup] = "answerForm" (ngSubmit)="onSubmit()" style="text-align: left;">
+        <mat-form-field style="width: 100%;">
+            <textarea formControlName="answerTxt" style="resize: none" maxlength="150" rows="4" cols="150" matInput placeholder="Yah! I know about this.."></textarea>
+            <mat-hint align="start"><strong>Just post your answer</strong> </mat-hint>
+            <mat-error >
+              Asnswer <strong>here</strong>
+            </mat-error>
+          </mat-form-field>
+          <button class="btn btn-primary" style="float: right" [disabled]="!answerForm.valid" type="submit">Submit</button>
+          <button type="reset" (click)="onWipe" style="float: right; margin-right: 1em;" class="btn">Wipe All</button>
+        </form>
+    </div>
+
+  </div>
+  <hr style="border-color: gainsboro;">
+  <div >
+  <div class="row" *ngFor="let a of answerData"  style="padding: 15px 0px 15px 0px;">
+      <div class="col-sm-2 userBorder">
+          <span>
+            <p>{{a.userName}}</p>
+            <i class="fa fa-user fa-4x" aria-hidden="true"></i>
+            <p>{{a.createdTime | date:'d/M/y'}}</p>
+          </span>
+        </div>
+        <div class="col-sm-9 ansBorder" >
+          <p>{{a.ans}}</p>
+        </div>
+      </div>
+  </div>
+  <ng-template #noAnswer>
+    *******No anwers yet*******
+  </ng-template>
+
+</div>

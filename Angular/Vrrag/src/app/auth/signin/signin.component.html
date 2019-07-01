@@ -1,0 +1,27 @@
+<span>
+  <h2 mat-dialog-title style="display:inline">SIGN IN</h2>
+</span>
+<i class="fa fa-times-circle fa-lg" style="margin-left: 7em; cursor: pointer;" aria-hidden="true" (click)="onClose()"></i>
+<form [formGroup] = "signInform" (ngSubmit)="onSubmit()">
+  
+  <div class="form-group">
+    <!-- <label>User Name</label>
+    <input class="form-control" type="text" id="username" name="usrname" formControlName = "username" > -->
+    <mat-form-field appearance="outline">
+      <mat-label>User Name</mat-label>
+      <input matInput type="text" id="username" name="usrname" formControlName = "username" placeholder="Name" >      
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <!-- <label>Password</label>
+    <input class="form-control" type="password" id="pswd" name="pswd" formControlName = "password" > -->
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" id="pswd" name="pswd" formControlName = "password" placeholder="Password" >      
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="(!signInform.valid)">Sign In</button>
+  <!-- <span *ngIf="signUpform.touched && !signUpform.valid">Enter valid data!</span> -->
+</form>
